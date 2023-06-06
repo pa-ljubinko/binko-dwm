@@ -111,8 +111,8 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export MAKEFLAGS="-j$(expr $(nproc) \+ 1)"
-export PATH="$PATH:/home/milic/.suckless/dwm/blocks/scripts"
-export PATH="$PATH:/home/milic/intelFPGA_lite/22.1std/quartus/bin"
+export PATH="$PATH:$HOME/.suckless/dwm/blocks/scripts"
+export PATH="$PATH:$HOME/intelFPGA_lite/22.1std/quartus/bin"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then 
