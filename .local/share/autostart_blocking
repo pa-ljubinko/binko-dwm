@@ -1,3 +1,0 @@
-#!/bin/bash
-exec xsetwacom set 'Wacom One by Wacom M Pen stylus' MapToOutput HEAD-0
-dwmblocks &
