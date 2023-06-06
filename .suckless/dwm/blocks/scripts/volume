@@ -1,0 +1,27 @@
+#!/bin/bash
+#----------------------------------------------------------------------------------------------------
+#Mouse actions for the block
+case $BLOCK_BUTTON in
+	1) pamixer -t ;;
+#	3) volctl ;;
+esac
+
+#Toggle mute
+[[ $(pamixer --get-mute) = "true" ]] && echo -n 󰝟 && exit
+#Display volume
+#echo  $(pamixer --get-volume)%;
+
+vol=$(pamixer --get-volume);
+
+if ((vol>67))
+then
+	echo  󰕾 $(pamixer --get-volume)%;
+	exit;
+elif ((vol>33))
+then
+	echo  󰖀 $(pamixer --get-volume)%;
+	exit;
+else
+	echo  󰕿 $(pamixer --get-volume)%;
+	exit; 
+fi

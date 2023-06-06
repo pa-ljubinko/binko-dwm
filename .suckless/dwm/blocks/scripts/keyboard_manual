@@ -1,0 +1,33 @@
+#!/bin/bash
+
+toggle() {
+	if [ "$(setxkbmap -query | awk '/layout/ {print $2}')" = "us" ]; then
+		setxkbmap -layout "rs" -variant "latin"
+		echo "rs-lt"
+		exit
+		# printf "lat"
+	else
+
+		if [ "$(setxkbmap -query | grep variant | awk '/variant/ {print$2}')" = "latin" ]; then
+			setxkbmap -layout "rs"
+			echo "rs-cr"
+			exit
+			# printf "cyr"
+		else
+			setxkbmap -layout "us"
+			echo "en-us"
+			exit
+			# printf "us"
+		fi
+
+	fi
+}
+
+case $BLOCK_BUTTON in
+1)
+	toggle
+	kill -38 $(pidof dwmblocks)
+	;;
+esac
+
+toggle

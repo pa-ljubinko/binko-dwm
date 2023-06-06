@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo " "$(wc -l </home/milic/.suckless/dwm/blocks/scripts/updatelist)

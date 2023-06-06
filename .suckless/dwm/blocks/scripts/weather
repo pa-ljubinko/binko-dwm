@@ -1,0 +1,5 @@
+#!/bin/bash
+
+weather=" "$(curl "wttr.in/ugrinovci?format=%t\n" 2>/dev/null)
+
+echo $weather
